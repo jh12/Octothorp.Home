@@ -12,8 +12,8 @@ RUN dotnet publish "Octothorp.Home.csproj" -c Release -p:VersionPrefix=$RELEASE_
 
 FROM base AS final
 
-RUN addgroup -S -g 1000 netcoregroup \
-&& adduser -S -u 1000 -G netcoregroup -s /bin/sh netcoreuser
+RUN addgroup --system --gid 1000 netcoregroup \
+&& adduser --system --uid 1000 --ingroup netcoregroup --shell /bin/sh netcoreuser
 
 WORKDIR /app
 COPY --from=publish /app/publish .
