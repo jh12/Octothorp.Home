@@ -6,6 +6,11 @@
     <title>@ViewData["Title"] - Octothorp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
 </head>
 <body>
     <header>
@@ -34,7 +39,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Octothorp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - Octothorp
         </div>
     </footer>
 

@@ -1,7 +1,7 @@
-﻿# octothorpe - <small>_noun_</small>
+# octothorpe - <small>_noun_</small>
 
 
-oc·to·thorpe | \ ˈäk-tə-ˌthȯrp \
+oc·to·thorpe | \ ˈäk-tə-ˌthȯrp \  
 **Variants**: _or_ octothorp
 ## Definition of _octothorpe_
 The symbol #
