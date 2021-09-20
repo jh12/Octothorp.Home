@@ -20,15 +20,13 @@ namespace Octothorp.Home
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureAppConfiguration((context, builder) =>
                 {
-                    builder.Sources.Clear();
-
                     string? configurationPath = Environment.GetEnvironmentVariable("configurationpath");
 
                     if (!string.IsNullOrEmpty(configurationPath))
                         builder.SetBasePath(configurationPath);
 
-                    builder.AddEnvironmentVariables()
-                        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+                    builder
+                        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
