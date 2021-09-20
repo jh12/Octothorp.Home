@@ -25,8 +25,9 @@ namespace Octothorp.Home
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-
+            builder.RegisterModule(new ApiModule(_hostEvEnvironment, Configuration));
         }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
