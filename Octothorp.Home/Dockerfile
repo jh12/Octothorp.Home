@@ -11,6 +11,12 @@ WORKDIR "/src/Octothorp.Home"
 RUN dotnet publish "Octothorp.Home.csproj" -c Release -p:VersionPrefix=$RELEASE_VERSION -o /app/publish
 
 FROM base AS final
+
+RUN addgroup -S -g 1000 netcoregroup \
+&& adduser -S -u 1000 -G netcoregroup -s /bin/sh netcoreuser
+
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+USER 1000
 ENTRYPOINT ["dotnet", "Octothorp.Home.dll"]
