@@ -1,10 +1,8 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Core;
-using Serilog.Events;
 
 namespace Octothorp.Home
 {
@@ -28,7 +26,9 @@ namespace Octothorp.Home
         {
             LoggerConfiguration builder = new LoggerConfiguration();
 
-            builder.WriteTo.Console();
+            builder
+                .ReadFrom
+                .Configuration(_configuration);
 
             builder
                 .Enrich.WithUserName()
